@@ -71,6 +71,18 @@ class MagasinTest {
         assertEquals(toString(itemsV2),toString(items));
     }
 
+    @Test
+    void magicPower(){
+        Item[] items = new Item[] {
+                new Item("Pouvoirs Magiques",6,10),
+                new Item("Pouvoirs Magiques",-1,10)
+        };
+        MagasinV2 appV2 = new MagasinV2(items);
+        appV2.updateQuality();
+        assertEquals(8, items[0].quality);
+        assertEquals(6, items[1].quality);
+    }
+
     private String toString(Item[] items){
         StringBuilder s = new StringBuilder();
         for (Item item : items){

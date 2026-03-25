@@ -29,11 +29,7 @@ class MagasinV1Test {
                                     new Item("Kryptonite", 70, 30) };
         MagasinV1 app = new MagasinV1(items);
         app.updateQuality();
-        assertEquals("Kryptonite", app.items[0].name);
-        assertEquals(4, app.items[0].quality);
-        assertEquals(2, app.items[0].sellIn);
-        assertEquals(30, app.items[1].quality);
-        assertEquals(70, app.items[1].sellIn);
+        assertEquals("Kryptonite, 2, 4 Kryptonite, 70, 30", app.items[0].toString()+' '+app.items[1].toString());
 
     }
 

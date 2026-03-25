@@ -37,8 +37,12 @@ class MagasinTest {
         Item[] items = new Item[] { new Item("Kryptonite", 2, 4),
                                     new Item("Kryptonite", 70, 30) };
         MagasinV1 app = new MagasinV1(items);
+        Item[] itemsV2 = new Item[] { new Item("Kryptonite", 2, 4),
+                new Item("Kryptonite", 70, 30) };
+        MagasinV2 appV2 = new MagasinV2(itemsV2);
         app.updateQuality();
-        assertEquals("Kryptonite, 2, 4 Kryptonite, 70, 30", app.items[0].toString()+' '+app.items[1].toString());
+        appV2.updateQuality();
+        assertEquals(toString(itemsV2),toString(items));
 
     }
 

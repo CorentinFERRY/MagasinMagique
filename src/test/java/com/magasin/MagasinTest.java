@@ -50,8 +50,11 @@ class MagasinTest {
     void passVIPConcert(){
         Item[] items = new Item[] { new Item("Pass VIP Concert", 2, 4), new Item("Pass VIP Concert", 10, 50) };
         MagasinV1 app = new MagasinV1(items);
+        Item[] itemsV2 = new Item[] { new Item("Pass VIP Concert", 2, 4), new Item("Pass VIP Concert", 10, 50) };
+        MagasinV2 appV2 = new MagasinV2(itemsV2);
         app.updateQuality();
-        assertEquals("Pass VIP Concert, 1, 7 Pass VIP Concert, 9, 50", app.items[0].toString()+' '+app.items[1].toString());
+        appV2.updateQuality();
+        assertEquals(toString(itemsV2),toString(items));
     }
 
     private String toString(Item[] items){

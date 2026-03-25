@@ -1,9 +1,9 @@
 package com.magasin;
 
-class Magasin {
+class MagasinV1 {
     Item[] items;
 
-    public Magasin(Item[] items) {
+    public MagasinV1(Item[] items) {
         this.items = items;
     }
 

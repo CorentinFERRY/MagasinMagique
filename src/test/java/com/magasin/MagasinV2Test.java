@@ -4,14 +4,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class MagasinTest {
+class MagasinV2Test {
 
     @Test
     void foo() {
         Item[] items = new Item[] { new Item("foo", 0, 0) };
-        Magasin app = new Magasin(items);
+        MagasinV1 app = new MagasinV1(items);
         app.updateQuality();
-        assertEquals("fixme", app.items[0].name);
+        assertEquals("foo", app.items[0].name);
     }
+
 
 }

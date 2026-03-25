@@ -11,14 +11,13 @@ class MagasinV1Test {
         Item[] items = new Item[] { new Item("foo", 0, 0) };
         MagasinV1 app = new MagasinV1(items);
         app.updateQuality();
-        assertEquals("foo", app.items[0].name);
-        assertEquals(0, app.items[0].quality);
-        assertEquals(-1, app.items[0].sellIn);
+        assertEquals("foo, -1, 0", app.items[0].toString());
     }
 
     @Test
     void compte(){
-        Item[] items = new Item[] { new Item("Comté", 2, 4),new Item("Comté", 360, 10) };
+        Item[] items = new Item[] { new Item("Comté", 2, 4),
+                                    new Item("Comté", 360, 10) };
         MagasinV1 app = new MagasinV1(items);
         app.updateQuality();
         assertEquals("Comté", app.items[0].name);

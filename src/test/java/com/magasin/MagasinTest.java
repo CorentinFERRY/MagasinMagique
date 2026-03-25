@@ -22,10 +22,14 @@ class MagasinTest {
     @Test
     void compte(){
         Item[] items = new Item[] { new Item("Comté", 2, 4),
-                                    new Item("Comté", 360, 10) };
+                new Item("Comté", 360, 10),
+                new Item("Comté", -1, 10),
+                new Item("Comté", -1, 50)};
         MagasinV1 app = new MagasinV1(items);
         Item[] itemsV2 = new Item[] { new Item("Comté", 2, 4),
-                new Item("Comté", 360, 10) };
+                new Item("Comté", 360, 10),
+                new Item("Comté", -1, 10),
+                new Item("Comté", -1, 50)};
         MagasinV2 appV2 = new MagasinV2(itemsV2);
         app.updateQuality();
         appV2.updateQuality();
@@ -35,10 +39,12 @@ class MagasinTest {
     @Test
     void kryptonite(){
         Item[] items = new Item[] { new Item("Kryptonite", 2, 4),
-                                    new Item("Kryptonite", 70, 30) };
+                new Item("Kryptonite", 70, 30),
+                new Item("Kryptonite", -1, 30)};
         MagasinV1 app = new MagasinV1(items);
         Item[] itemsV2 = new Item[] { new Item("Kryptonite", 2, 4),
-                new Item("Kryptonite", 70, 30) };
+                new Item("Kryptonite", 70, 30),
+                new Item("Kryptonite", -1, 30)};
         MagasinV2 appV2 = new MagasinV2(itemsV2);
         app.updateQuality();
         appV2.updateQuality();
@@ -48,9 +54,17 @@ class MagasinTest {
 
     @Test
     void passVIPConcert(){
-        Item[] items = new Item[] { new Item("Pass VIP Concert", 2, 4), new Item("Pass VIP Concert", 10, 50) };
+        Item[] items = new Item[] { new Item("Pass VIP Concert", 2, 4),
+                new Item("Pass VIP Concert", 11,4),
+                new Item("Pass VIP Concert", 10,49),
+                new Item("Pass VIP Concert", 5,49),
+                new Item("Pass VIP Concert", -1,49)};
         MagasinV1 app = new MagasinV1(items);
-        Item[] itemsV2 = new Item[] { new Item("Pass VIP Concert", 2, 4), new Item("Pass VIP Concert", 10, 50) };
+        Item[] itemsV2 = new Item[] { new Item("Pass VIP Concert", 2, 4),
+                new Item("Pass VIP Concert", 11,4),
+                new Item("Pass VIP Concert", 10,49),
+                new Item("Pass VIP Concert", 5,49),
+                new Item("Pass VIP Concert", -1,49)};
         MagasinV2 appV2 = new MagasinV2(itemsV2);
         app.updateQuality();
         appV2.updateQuality();

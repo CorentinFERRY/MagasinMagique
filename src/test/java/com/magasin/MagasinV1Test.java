@@ -20,11 +20,7 @@ class MagasinV1Test {
                                     new Item("Comté", 360, 10) };
         MagasinV1 app = new MagasinV1(items);
         app.updateQuality();
-        assertEquals("Comté", app.items[0].name);
-        assertEquals(5, app.items[0].quality);
-        assertEquals(1, app.items[0].sellIn);
-        assertEquals(11, app.items[1].quality);
-        assertEquals(359, app.items[1].sellIn);
+        assertEquals("Comté, 1, 5 Comté, 359, 11", app.items[0].toString()+' '+app.items[1].toString());
     }
 
     @Test

@@ -10,9 +10,13 @@ class MagasinTest {
 
     @Test
     void foo() {
-        Item[] items = new Item[] { new Item("foo", 0, 0),new Item("foo", 0, 5) };
+        Item[] items = new Item[] { new Item("foo", 0, 0),
+                new Item("foo", 0, 5),
+                new Item("foo", 2, 5)};
         MagasinV1 app = new MagasinV1(items);
-        Item[] itemsV2 = new Item[] { new Item("foo", 0, 0),new Item("foo", 0, 5) };
+        Item[] itemsV2 = new Item[] { new Item("foo", 0, 0),
+                new Item("foo", 0, 5),
+                new Item("foo", 2, 5)};
         MagasinV2 appV2 = new MagasinV2(itemsV2);
         app.updateQuality();
         appV2.updateQuality();

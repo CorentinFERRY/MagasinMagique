@@ -25,7 +25,7 @@ class MagasinV2 {
                 updateConcertPass(item);
                 break;
             case "Pouvoirs Magiques":
-                updateMagicPowier(item);
+                updateMagicPower(item);
                 break;
             default:
                 updateNormalItem(item);
@@ -33,7 +33,7 @@ class MagasinV2 {
         }
     }
 
-    private void updateMagicPowier(Item item) {
+    private void updateMagicPower(Item item) {
         item.sellIn--;
         item.quality = Math.max(0, item.quality - (item.sellIn < 0 ? 4 : 2));
     }
@@ -55,18 +55,15 @@ class MagasinV2 {
 
     private void updateConcertPass(Item item) {
         item.sellIn--;
-
         if (item.sellIn < 0) {
             item.quality = 0;
             return;
         }
-
         int increment = 1;
         if (item.sellIn < 5)
             increment = 3;
         else if (item.sellIn < 10)
             increment = 2;
-
         item.quality = Math.min(50, item.quality + increment);
     }
 }
